@@ -5,6 +5,7 @@
 链接：https://www.jianshu.com/p/712d19374b2e
 來源：简书
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+
 2-增加了储存mongodb
 
 3-增加了docker
@@ -32,7 +33,7 @@ if not os.path.exists(rev_tmp_dir): os.mkdir(rev_tmp_dir)
 face_bug = None
 
 # 增加数据库部分
-store = MongoBase()
+store = MongoBase('172.17.0.2', '27017')
 store.switchDataBase('wechat')
 
 # 将接收到的消息存放在字典中，当接收到新消息时对字典中超时的消息进行清理 | 不接受不具有撤回功能的信息
