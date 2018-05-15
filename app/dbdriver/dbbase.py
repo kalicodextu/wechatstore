@@ -2,8 +2,8 @@ from pymongo import MongoClient
 
 
 class MongoBase(object):
-    def __init__(self):
-        self.client =  MongoClient('mongodb://localhost:27017/')
+    def __init__(self, host, port):
+        self.client =  MongoClient('mongodb://' + host + port)
          
     def switchDataBase(self, db_name):
         try:
